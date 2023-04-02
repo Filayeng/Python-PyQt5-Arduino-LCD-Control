@@ -1,5 +1,5 @@
-#include <LiquidCrystal.h>
-LiquidCrystal lcd(12,11,5,4,3,2);
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27,16,2);
 
 String text1,text2,text3,text4,text5;
 int i,z,x,lengthStr;
@@ -104,9 +104,9 @@ void lcdFlashingPrint(String text_1,String text_2){            //flashing interm
 
 void setup() {
   Serial.begin(9600);
-  lcd.begin(16,2);     //begin lcd
+  lcd.begin();     //begin lcd
   lcd.clear();
-  delay(10);
+  delay(100);
 }
 
 void loop(){
